@@ -12,7 +12,7 @@ insertArticle(knex, newArticle) {
               return rows[0]
           })
        },
-       getById(knex, id) {
+ getById(knex, id) {
            return knex
            .from('blogful_articles')
            .select('*')
@@ -20,15 +20,15 @@ insertArticle(knex, newArticle) {
            .first()
         },
 
-        deleteArticle(knex, id) {
-               return knex('blogful_articles')
-                 .where({ id })
-                 .delete()
+ deleteArticle(knex, id) {
+         return knex('blogful_articles')
+            .where({ id })
+            .delete()
              },
-            updateArticle(knex, id, newArticleFields) {
-                   return knex('blogful_articles')
-                     .where({ id })
-                     .update(newArticleFields)
+ updateArticle(knex, id, newArticleFields) {
+            return knex('blogful_articles')
+                .where({ id })
+                .update(newArticleFields)
                  },
 
  
